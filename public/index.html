@@ -1,1 +1,540 @@
-asdf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Family Planning Clinic | Comprehensive Women's Healthcare in Atlanta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo::before {
+            content: "✦";
+            color: #667eea;
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content {
+            background: white;
+            margin-top: -50px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .providers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .provider-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .provider-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .provider-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .insurance-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .insurance-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .insurance-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .promotion-banner {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+        }
+
+        .contact-section {
+            background: #2d3748;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Gemini Family Planning</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#providers">Our Team</a></li>
+                <li><a href="#insurance">Insurance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Schedule Appointment</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Compassionate Family Planning Care</h1>
+            <p>Comprehensive women's healthcare services in the heart of Atlanta. Your health, your choices, our support.</p>
+            <a href="#services" class="cta-button" style="font-size: 1.1rem; padding: 15px 30px;">Explore Our Services</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                
+                <div class="promotion-banner">
+                    <h3 style="margin-bottom: 1rem;">New Patient Special</h3>
+                    <p style="font-size: 1.1rem;">20% off initial consultation for new patients. Insurance accepted. Call today to schedule your appointment!</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">♡</div>
+                        <h3>Contraceptive Services</h3>
+                        <p>Comprehensive birth control options including IUDs, implants, pills, and emergency contraception. We help you find the right method for your lifestyle.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">☤</div>
+                        <h3>Annual Wellness Exams</h3>
+                        <p>Complete gynecological care including Pap smears, breast exams, and preventive screenings. Most insurance plans cover annual exams at 100%.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚚</div>
+                        <h3>STI Testing & Treatment</h3>
+                        <p>Confidential testing and treatment for sexually transmitted infections. Same-day results available for many tests.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">♀</div>
+                        <h3>Pregnancy Services</h3>
+                        <p>Pregnancy testing, counseling, and options guidance. We provide compassionate care for all pregnancy decisions.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⊕</div>
+                        <h3>Reproductive Health</h3>
+                        <p>Fertility counseling, preconception planning, and reproductive health education tailored to your needs.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⊗</div>
+                        <h3>Menopause Management</h3>
+                        <p>Hormone therapy options and comprehensive care for women experiencing menopause and perimenopause.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="providers" class="section" style="background: #f8fafc;">
+            <div class="container">
+                <h2 class="section-title">Meet Our Healthcare Team</h2>
+                <div class="providers-grid">
+                    <div class="provider-card">
+                        <div class="provider-avatar">DR</div>
+                        <h3>Dr. Sarah Martinez, MD</h3>
+                        <p><strong>Medical Director & OB/GYN</strong></p>
+                        <p>Board-certified with 15+ years experience in women's reproductive health.</p>
+                        <p><strong>Phone:</strong> (404) 555-2847</p>
+                        <p><strong>Email:</strong> smartinez@geminifp.com</p>
+                    </div>
+                    <div class="provider-card">
+                        <div class="provider-avatar">DR</div>
+                        <h3>Dr. Michael Chen, MD</h3>
+                        <p><strong>Family Medicine Physician</strong></p>
+                        <p>Specializing in comprehensive family planning and preventive care.</p>
+                        <p><strong>Phone:</strong> (404) 555-2859</p>
+                        <p><strong>Email:</strong> mchen@geminifp.com</p>
+                    </div>
+                    <div class="provider-card">
+                        <div class="provider-avatar">NP</div>
+                        <h3>Jessica Thompson, NP</h3>
+                        <p><strong>Nurse Practitioner</strong></p>
+                        <p>Women's health specialist with focus on contraceptive counseling.</p>
+                        <p><strong>Phone:</strong> (404) 555-2863</p>
+                        <p><strong>Email:</strong> jthompson@geminifp.com</p>
+                    </div>
+                    <div class="provider-card">
+                        <div class="provider-avatar">PA</div>
+                        <h3>David Williams, PA-C</h3>
+                        <p><strong>Physician Assistant</strong></p>
+                        <p>Certified in reproductive health and family planning services.</p>
+                        <p><strong>Phone:</strong> (404) 555-2871</p>
+                        <p><strong>Email:</strong> dwilliams@geminifp.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="insurance" class="section insurance-section">
+            <div class="container">
+                <h2 class="section-title">Insurance & Payment Options</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #4a5568;">
+                    We accept most major insurance plans. Many services are covered at 100% under preventive care benefits.
+                </p>
+                
+                <div class="insurance-logos">
+                    <div class="insurance-card">Aetna</div>
+                    <div class="insurance-card">Blue Cross Blue Shield</div>
+                    <div class="insurance-card">Cigna</div>
+                    <div class="insurance-card">UnitedHealthcare</div>
+                    <div class="insurance-card">Kaiser Permanente</div>
+                    <div class="insurance-card">Medicaid</div>
+                    <div class="insurance-card">Medicare</div>
+                    <div class="insurance-card">Humana</div>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 15px; margin-top: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">Payment Options</h3>
+                    <p style="color: #4a5568;">• Sliding fee scale available for uninsured patients</p>
+                    <p style="color: #4a5568;">• Payment plans available</p>
+                    <p style="color: #4a5568;">• Cash, credit, and HSA/FSA accepted</p>
+                    <p style="color: #4a5568;">• Financial counseling available</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title" style="color: white;">Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Clinic Information</h3>
+                        <p><strong>Address:</strong> 1247 Peachtree Street NE, Suite 400<br>Atlanta, GA 30309</p>
+                        <p><strong>Main Phone:</strong> (404) 555-GEMS (4367)</p>
+                        <p><strong>Fax:</strong> (404) 555-4368</p>
+                        <p><strong>Email:</strong> info@geminifp.com</p>
+                        <p><strong>Appointment Line:</strong> appointments@geminifp.com</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Hours of Operation</h3>
+                        <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</p>
+                        <p><strong>Saturday:</strong> 9:00 AM - 3:00 PM</p>
+                        <p><strong>Sunday:</strong> Closed</p>
+                        <p style="margin-top: 1rem;"><strong>24/7 Nurse Line:</strong> (404) 555-CARE (2273)</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Emergency Contact</h3>
+                        <p>For after-hours emergencies, please call our 24/7 answering service at (404) 555-HELP (4357)</p>
+                        <p style="margin-top: 1rem;"><strong>Patient Portal:</strong> portal@geminifp.com</p>
+                        <div class="social-links">
+                            <a href="#" title="Facebook">f</a>
+                            <a href="#" title="Twitter">t</a>
+                            <a href="#" title="Instagram">i</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gemini Family Planning Clinic. All rights reserved. | Licensed Healthcare Facility</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                Privacy Policy | Patient Rights | Non-Discrimination Policy
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Animate service cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards
+        document.querySelectorAll('.service-card, .provider-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
